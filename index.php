@@ -20,10 +20,13 @@
     <!-- Leaflet -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+    <!-- Vår css dokument -->
+    <link href="diacss.css" rel="stylesheet">
   </head>
   <body>
     <h1>Hello, DIA Hackweek!</h1>
-    <h2>Have a day.</h2>
+    <h2 id="minidtagg">Have a day.</h2>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
