@@ -20,9 +20,11 @@
     <!-- Mapbox -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 
     <!-- Vår css dokument -->
-    <link href="diacss.css" rel="stylesheet">
+    <link href="css/diacss.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
@@ -37,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="">Brand</a>
+              <a class="navbar-brand" href="">Visit Malmö</a>
             </div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -52,18 +54,20 @@
       </div>
 
       <div class="row">
-        <h1 id="minidtagg">My Container</h1>
-        <div id="mapid"></div>
-        <script>
-          mapboxgl.accessToken = 'pk.eyJ1Ijoic2Nod3VzY2giLCJhIjoiY2lwNWY5MnR2MDAxZncwbTI1NXI3aDY1cyJ9.X3yn1wtjHQ3Q5uDN_WVFKg';
-          var map = new mapboxgl.Map({
-              container: 'mapid', // container id
-              style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
-              center: [-74.50, 40], // starting position
-              zoom: 9 // starting zoom
-          });
+        <div class="col-md-9">
+          <div id="mapid"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">Skånetrafiken</div>
+            <div class="panel-body">
+              <p>test</p>
+            </div>
+          </div>
+          <iframe src="https://www.skanetrafiken.se/sok-resa/" width="100%" height="625px">
 
-        </script>
+          </iframe>
+        </div>
       </div>
 
     </div>
@@ -72,7 +76,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-
-
+    <script src="js/projectjs.js"></script>
   </body>
 </html>

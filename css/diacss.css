@@ -1,0 +1,13 @@
+body{
+  background-image: url('../images/bg.jpg');
+  background-position: center;
+}
+
+
+#minidtagg{
+  color: red;
+  font-size: 50px;
+}
+#mapid {
+  height: 700px;
+}
