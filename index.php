@@ -23,6 +23,7 @@
   </head>
   <body>
     <h1>Hello, DIA Hackweek!</h1>
+    <h2>Have a day.</h2>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
