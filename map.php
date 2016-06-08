@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Malmö Turist</title>
+  <title>Map of Malmö</title>
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -18,8 +18,6 @@
   <![endif]-->
 
   <!-- Mapbox -->
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.css' rel='stylesheet' />
   <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
   <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -32,53 +30,11 @@
   <link href="css/diacss.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <!-- Navbar -->
-    <div class="row">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="">Visit Malmö</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Hem</a></li>
-              <li><a href="#">Sevärdheter</a></li>
-              <li><a href="#">Resturang</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-    <div class="row">
-      <div class="col-md-9">
-        <div id="mapid"></div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default">
-          <div class="panel-heading">Skånetrafiken</div>
-          <div class="panel-body">
-            <p>test</p>
-          </div>
-        </div>
-        <!--
-        <iframe src="https://www.skanetrafiken.se/sok-resa/" width="100%" height="625px">
-
-      </iframe>
-    -->
+  <?php require"nav.php" ?>
+  <div class="row">
+    <div id="mapid"></div>
   </div>
-</div>
 
-</div>
-
-
+  <?php require"footer.php" ?>
 </body>
 </html>

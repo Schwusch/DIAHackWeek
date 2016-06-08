@@ -26,43 +26,21 @@
   <link href="css/diacss.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="">Visit Malmö</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Daytrip</a></li>
-          <li><a href="#">Transport</a></li>
-          <li><a href="#">Restaurants</a></li>
-          <li><a href="map.php">Map</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php require"nav.php" ?>
 
   <!-- Main -->
   <div class="startheader">
     <div class="container">
     </div>
   </div>
-
+  <hr class="featurette-divider">
   <!-- submain articles -->
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <h2>Header</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details</a></p>
+        <a href="#" class="thumbnail">
+          <img src="images/boat.jpg">
+        </a>
       </div>
       <div class="col-md-4">
         <h2>Header</h2>
@@ -70,24 +48,14 @@
         <p><a class="btn btn-default" href="#" role="button">View details</a></p>
       </div>
       <div class="col-md-4">
-        <h2>Header</h2>
+        <h2 id="test">Header</h2>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
         <p><a class="btn btn-default" href="#" role="button">View details</a></p>
       </div>
     </div>
   </div>
 
-  <hr class="featurette-divider">
-<!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2015 Company, Inc.
-        <a href="#">Privacy</a>
-         ·
-         <a href="#">Terms</a>
-      </p>
-    </div>
-  </footer>
+  <?php require"footer.php" ?>
 
 </body>
 </html>
