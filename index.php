@@ -100,5 +100,9 @@
 
   <?php require"footer.php" ?>
 
+  <script>
+    document.getElementById("daytrip").className = "active";
+  </script>
+
 </body>
 </html>

@@ -36,5 +36,9 @@
   </div>
 
   <?php require"footer.php" ?>
+
+  <script>
+    document.getElementById("mymap").className = "active";
+  </script>
 </body>
 </html>
