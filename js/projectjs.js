@@ -23,6 +23,7 @@ $(window).load(function(){
     L.mapbox.accessToken = token;
     var map = L.mapbox.map('mapid', 'mapbox.streets')
     .setView([y, x], 14);
+    map.featureLayer
 
     getPlaces(x, y, "places", function(results){
       L.mapbox.featureLayer(results)
@@ -31,13 +32,21 @@ $(window).load(function(){
 
     getPlaces(x, y, "pois", function(results){
       L.mapbox.featureLayer(results)
-      .addTo(map);
+      .addTo(map).setFilter(filterCondition("main", "facilities"));
     });
 
     getPlaces(x, y, "paths", function(results){
       L.mapbox.featureLayer(results)
       .addTo(map);
     });
+
+    function filterCondition(key, value) {
+      return function(feature) {
+        return (feature.category[key] === value);
+      };
+    }
+
+
   };
 
   function getPlaces(x, y, contentType, whenDone){
