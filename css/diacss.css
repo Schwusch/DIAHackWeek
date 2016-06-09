@@ -30,3 +30,9 @@ body{
 #myCarousel img{
   height: auto;
 }
+
+.thumbnail img{
+  min-height: 314px;
+  height: 314px;
+  max-height: 314px;
+}

@@ -42,25 +42,25 @@
       <div class="item">
         <img src="images/carousel/cmyday.jpg" alt="">
         <div class="carousel-caption">
-          <h1>Example headline.</h1>
+          <h1>My Day in Malmö.</h1>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          <p><a class="btn btn-lg btn-primary" href="map.php" role="button">Check Map</a></p>
         </div>
       </div>
       <div class="item active">
         <img src="images/carousel/cstortorget.jpg" alt="">
         <div class="carousel-caption">
-          <h1>Example headline.</h1>
+          <h1>Stortorget</h1>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          <p><a class="btn btn-lg btn-success" href="map.php?to=stortorget" role="button">Go to Stortorget</a></p>
         </div>
       </div>
       <div class="item">
         <img src="images/carousel/ctorso.jpg" alt="">
         <div class="carousel-caption">
-          <h1>Example headline.</h1>
+          <h1>Västra Hamnen</h1>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          <p><a class="btn btn-lg btn-success" href="map.php?to=vastra" role="button">Go to Västra Hamnen</a></p>
         </div>
       </div>
     </div>
@@ -82,18 +82,18 @@
     <div class="row">
       <div class="col-md-4">
         <a href="map.php?type=boat" class="thumbnail">
-          <img src="images/boat.jpg">
+          <img src="images/boat-scale.jpg">
         </a>
       </div>
       <div class="col-md-4">
-        <h2>Header</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details</a></p>
+        <a href="map.php?type=cykel" class="thumbnail">
+          <img src="images/cykel.jpg">
+        </a>
       </div>
       <div class="col-md-4">
-        <h2 id="test">Header</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details</a></p>
+        <a href="map.php?type=cykel" class="thumbnail">
+          <img src="images/museer.jpg">
+        </a>
       </div>
     </div>
   </div>
@@ -106,7 +106,8 @@
 
     // Carousel settings and functions
     $('.carousel').carousel({
-      interval: 2500
+      interval: 4000,
+      pause: false
     })
     function next(){
       $('.carousel').carousel("next");
