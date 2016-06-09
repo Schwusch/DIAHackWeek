@@ -27,32 +27,36 @@ $(window).load(function(){
 
     getPlaces(x, y, "places", function(results){
       L.mapbox.featureLayer(results)
-      .addTo(map);
+      .addTo(map).setFilter(filterCondition2("id", "016135"));
     });
 
     getPlaces(x, y, "pois", function(results){
       L.mapbox.featureLayer(results)
-      .addTo(map).setFilter(filterCondition("main", "facilities"));
+      .addTo(map).setFilter(filterCondition1("category", null, "accomodations"));
     });
 
     getPlaces(x, y, "paths", function(results){
       L.mapbox.featureLayer(results)
-      .addTo(map);
+      .addTo(map).setFilter(filterCondition2("id", "00d50"));
     });
-
-    function filterCondition(key, value) {
-      return function(feature) {
-        return (feature.category[key] === value);
-      };
-    }
-
-
   };
+
+  function filterCondition1(type, key, value) {
+    return function(feature) {
+      return (feature!=undefined && feature[type][key]!=undefined) ? feature[type][key]===value : false;
+    };
+  }
+
+  function filterCondition2(key, value) {
+    return function(feature) {
+      return (feature!=undefined && feature[key]!=undefined) ? feature[key]===value : false;
+    };
+  }
 
   function getPlaces(x, y, contentType, whenDone){
     $.ajax({
       type: "GET",
-      url: "http://build.dia.mah.se/" + contentType + "?latitude="+ y +"&longitude=" + x + "&within=2000"
+      url: "http://build.dia.mah.se/" + contentType + "?latitude="+ y +"&longitude=" + x + "&within=5000"
     })
     .done(function(jsonResult) {
       console.log(jsonResult);
