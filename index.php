@@ -42,9 +42,9 @@
       <div class="item">
         <img src="images/carousel/cmyday.jpg" alt="">
         <div class="carousel-caption">
-          <h1>My Day in Malmö.</h1>
+          <!--<h1>My Day in Malmö.</h1>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="map.php" role="button">Check Map</a></p>
+          <p><a class="btn btn-lg btn-primary" href="map.php" role="button">Check Map</a></p>-->
         </div>
       </div>
       <div class="item active">
@@ -52,7 +52,7 @@
         <div class="carousel-caption">
           <h1>Stortorget</h1>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <p><a class="btn btn-lg btn-success" href="map.php?to=stortorget" role="button">Go to Stortorget</a></p>
+          <p><a class="btn btn-lg btn-success" href="map.php?type=stortorget" role="button">Go to Stortorget</a></p>
         </div>
       </div>
       <div class="item">
@@ -60,7 +60,7 @@
         <div class="carousel-caption">
           <h1>Västra Hamnen</h1>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <p><a class="btn btn-lg btn-success" href="map.php?to=vastra" role="button">Go to Västra Hamnen</a></p>
+          <p><a class="btn btn-lg btn-success" href="map.php?type=vastra" role="button">Go to Västra Hamnen</a></p>
         </div>
       </div>
     </div>

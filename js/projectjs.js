@@ -1,4 +1,4 @@
-var geoJson =[];
+var geoJson = [];
 $(window).load(function(){
   navigator.geolocation.getCurrentPosition(showPosition,
     errorCallback,
@@ -32,11 +32,7 @@ $(window).load(function(){
   {
     var url = QueryString;
 
-    if(url["to"])
-    {
-      console.log("To");
-    }
-    else if(url["type"])
+    if(url["type"])
     {
       if(url["type"] === "toilets")
       {
@@ -73,13 +69,23 @@ $(window).load(function(){
     console.log(url);
   }
 
+// Funkar inte att cleara (vet ej vad layer är för instans av)
+function clearDirection(map)
+{
+  map.eachLayer(function(layer){
+    if(layer instanceof L.mapbox.directions){
+      console.log(layer);
+      //map.removeLayer(layer);
+    }
+  });
+}
+
 function setupDirection(map, start, finish)
 {
+  clearDirection(map);
   var directions = L.mapbox.directions({
       profile: 'mapbox.walking'
   });
-
-
 
   var directionsInputControl = L.mapbox.directions.inputControl('inputs', directions)
     .addTo(map);

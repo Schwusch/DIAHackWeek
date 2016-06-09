@@ -14,9 +14,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li id="daytrip"><a href="index.php"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Daytrip</a></li>
-        <li id="rest"><a href="#"><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Restaurants</a></li>
-        <li id="trans"><a href="#"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Transport</a></li>
+        <li id="rest"><a href="map.php?type=restaurants"><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Restaurants</a></li>
+        <li id="trans"><a href="map.php?type=transport"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Transport</a></li>
         <li id="mymap"><a href="map.php"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Map</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="toilet"><a href="map.php?type=toilets"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Toilets</a></li>
       </ul>
     </div>
   </div>
