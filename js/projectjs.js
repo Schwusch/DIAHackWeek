@@ -26,18 +26,36 @@ $(window).load(function(){
     map.featureLayer
 
     getPlaces(x, y, "places", function(results){
-      L.mapbox.featureLayer(results)
+      var myLayer = L.mapbox.featureLayer(results)
       .addTo(map).setFilter(filterCondition2("id", "016135"));
+      myLayer.on('mouseover', function(e){
+        e.layer.openPopup();
+      });
+      myLayer.on('mouseout', function(e) {
+        e.layer.closePopup();
+      });
     });
 
     getPlaces(x, y, "pois", function(results){
-      L.mapbox.featureLayer(results)
+      var myLayer = L.mapbox.featureLayer(results)
       .addTo(map).setFilter(filterCondition1("category", null, "accomodations"));
+      myLayer.on('mouseover', function(e){
+        e.layer.openPopup();
+      });
+      myLayer.on('mouseout', function(e) {
+        e.layer.closePopup();
+      });
     });
 
     getPlaces(x, y, "paths", function(results){
-      L.mapbox.featureLayer(results)
+      var myLayer = L.mapbox.featureLayer(results)
       .addTo(map).setFilter(filterCondition2("id", "00d50"));
+      myLayer.on('mouseover', function(e){
+        e.layer.openPopup();
+      });
+      myLayer.on('mouseout', function(e) {
+        e.layer.closePopup();
+      });
     });
   };
 
@@ -60,6 +78,15 @@ $(window).load(function(){
     })
     .done(function(jsonResult) {
       console.log(jsonResult);
-      whenDone(jsonResult.results);
+      var geos = jsonResult.results;
+      for (let geo of geos){
+        geo.properties = {
+          title: geo.name
+
+        }
+        console.log(geo);
+
+      }
+      whenDone(geos);
     });
   }
