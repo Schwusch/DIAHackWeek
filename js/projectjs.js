@@ -51,7 +51,7 @@ $(window).load(function(){
             e.layer.feature.properties['marker-color'] = '#ff8888';
             myLayer.setGeoJSON(geoJson);
 
-            var start = {lat: x, lng: y};
+            var start = {lat: y, lng: x};
             var finish = e.layer.feature.geometry.coordinates;
 
             setupDirection(map, start, finish);
@@ -96,7 +96,7 @@ function setupDirection(map, start, finish)
   var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
       .addTo(map);
 
-  directions.setOrigin(L.latLng(start.lat, start.lng)).setDestination(L.latLng(finish[0], finish[1])).query();
+  directions.setOrigin(L.latLng(start.lat, start.lng)).setDestination(L.latLng(finish[1], finish[0])).query();
 }
 
   function resetColors(myLayer) {
