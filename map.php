@@ -32,6 +32,9 @@
 </head>
 <body>
   <?php require"nav.php" ?>
+  <script src='https://api.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.4.0/mapbox.directions.js'></script>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.4.0/mapbox.directions.css' type='text/css' />
+
   <div class="row">
     <div id="mapid"></div>
   </div>
