@@ -73,9 +73,8 @@ $(window).load(function(){
 function clearDirection(map)
 {
   map.eachLayer(function(layer){
-    if(layer instanceof L.mapbox.directions){
-      console.log(layer);
-      //map.removeLayer(layer);
+    if (layer instanceof L.Marker){
+      map.removeLayer(layer);
     }
   });
 }
