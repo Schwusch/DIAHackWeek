@@ -37,37 +37,87 @@ $(window).load(function(){
       if(url["type"] === "toilets")
       {
         console.log("Showing toilets");
-        getPlaces(x, y, "pois", function(results){
-          geoJson = results;
-          var myLayer = L.mapbox.featureLayer(results)
-          .addTo(map).setFilter(filterCondition1("category", "sub", "toilets"));
-          myLayer.on('click', function(e){
-            resetColors(myLayer);
-            e.layer.feature.properties['old-color'] = e.layer.feature.properties['marker-color'];
-            e.layer.feature.properties['marker-color'] = '#ff8888';
-            myLayer.setGeoJSON(geoJson);
-
-            var start = {lat: y, lng: x};
-            var finish = e.layer.feature.geometry.coordinates;
-
-            setupDirection(map, start, finish);
-          });
-          myLayer.on('mouseover', function(e){
-            e.layer.openPopup();
-          });
-          myLayer.on('mouseout', function(e) {
-            e.layer.closePopup();
-          });
-        });
+        var args = ["category", "sub", "toilets"];
+        FindStuff(x, y, map, args);
+      }
+      else if(url["type"] === "restaurants")
+      {
+        console.log("Showing restaurants");
+        var args = ["category", "sub", "restaurants"];
+        FindStuff(x, y, map, args);
+      }
+      else if(url["type"] === "stortorget")
+      {
+        console.log("Showing stortorget");
+        var args = ["name", "Stortorget"];
+        placePOIbyID(x, y, map, args);
+      }
+      else if(url["type"] === "vastra")
+      {
+        console.log("Showing Västra Hamnen");
+        var args = ["name", "Västra hamnen Varvsparken"];
+        placePOIbyID(x, y, map, args);
       }
     }
     else
     {
       someData(x, y, map);
     }
-
-    console.log(url);
   }
+
+function placePOIbyID(x, y, map, args)
+{
+  getPlaces(x, y, "pois", function(results){
+    geoJson = results;
+    var myLayer = L.mapbox.featureLayer(results)
+    .addTo(map).setFilter(filterCondition2(args[0], args[1]));
+      myLayer.setGeoJSON(geoJson);
+
+      var start = {lat: y, lng: x};
+      var finish = results[0].geometry.coordinates;
+      myLayer.eachLayer(function(marker) {
+        console.log(marker);
+        finish = marker.feature.geometry.coordinates;
+
+    });
+
+      setupDirection(map, start, finish);
+
+    myLayer.on('mouseover', function(e){
+      e.layer.openPopup();
+    });
+    myLayer.on('mouseout', function(e) {
+      e.layer.closePopup();
+    });
+  });
+}
+
+function FindStuff(x, y, map, args)
+{
+  getPlaces(x, y, "pois", function(results){
+    geoJson = results;
+    var myLayer = L.mapbox.featureLayer(results)
+    .addTo(map).setFilter(filterCondition1(args[0], args[1], args[2]));
+    myLayer.on('click', function(e){
+      resetColors(myLayer);
+      e.layer.feature.properties['old-color'] = e.layer.feature.properties['marker-color'];
+      e.layer.feature.properties['marker-color'] = '#ff8888';
+      myLayer.setGeoJSON(geoJson);
+
+      var start = {lat: y, lng: x};
+      var finish = e.layer.feature.geometry.coordinates;
+
+      clearDirection(map);
+      setupDirection(map, start, finish);
+    });
+    myLayer.on('mouseover', function(e){
+      e.layer.openPopup();
+    });
+    myLayer.on('mouseout', function(e) {
+      e.layer.closePopup();
+    });
+  });
+}
 
 // Funkar inte att cleara (vet ej vad layer är för instans av)
 function clearDirection(map)
@@ -81,7 +131,6 @@ function clearDirection(map)
 
 function setupDirection(map, start, finish)
 {
-  clearDirection(map);
   var directions = L.mapbox.directions({
       profile: 'mapbox.walking'
   });
@@ -163,7 +212,7 @@ function setupDirection(map, start, finish)
   function getPlaces(x, y, contentType, whenDone){
     $.ajax({
       type: "GET",
-      url: "http://build.dia.mah.se/" + contentType + "?latitude="+ y +"&longitude=" + x + "&within=5000"
+      url: "http://build.dia.mah.se/" + contentType + "?latitude="+ y +"&longitude=" + x + "&within=10000"
     })
     .done(function(jsonResult) {
       console.log(jsonResult);
