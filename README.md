@@ -2,4 +2,4 @@
 
 DIA Hackweek - Malmö Högskola - Lovelace
 
-Alla dokument finns under docs
+[Alla dokument finns under docs](docs)
